@@ -11,3 +11,4 @@ public:
 	void updateComet(Comet comets[], int size);
 };
 
+//Comet
