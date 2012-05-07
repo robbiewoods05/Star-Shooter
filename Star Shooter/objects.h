@@ -1,4 +1,3 @@
-
 namespace ENUMS
 {
 	enum IDS { PLAYER, BULLET, ENEMY };
