@@ -65,7 +65,7 @@ int main(void)
     while (!done) {
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(event_queue, &ev);
-		collideBullet(bullets, NUM_BULLETS, comets, NUM_COMETS);
+		
 	if (ev.type == ALLEGRO_EVENT_TIMER) {
 	    redraw = true;
 	    if (keys[UP])
@@ -80,6 +80,7 @@ int main(void)
 		bullets[NUM_BULLETS].update(bullets, NUM_BULLETS);
 		comets[NUM_COMETS].start(comets, NUM_COMETS);
 		comets[NUM_COMETS].update(comets, NUM_COMETS);
+		collideBullet(bullets, NUM_BULLETS, comets, NUM_COMETS);
 
 	} else if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
 	    done = true;
@@ -169,7 +170,7 @@ void collideBullet(Bullet bullet[], int bSize, Comet comets[], int cSize)
 					if (bullet[i].x > (comets[j].x) &&
 						bullet[i].x < (comets[j].x + comets[j].boundX) &&
 						bullet[i].y > (comets[j].y) &&
-						bullet[i].y < (comets[j].y + comets[j].boundY))
+						bullet[i].y < (comets[j].y + 18))
 					{
 						bullet[i].live = false;
 						comets[j].live = false;
