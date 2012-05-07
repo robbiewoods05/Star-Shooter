@@ -5,7 +5,7 @@
 
 using namespace ENUMS;
 
-void Bullet::initBullet(Bullet bullet[], int size)
+void Bullet::init(Bullet bullet[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -16,7 +16,7 @@ void Bullet::initBullet(Bullet bullet[], int size)
 	}
 }
     
-void Bullet::drawBullet(Bullet bullet[], int size)
+void Bullet::draw(Bullet bullet[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -25,7 +25,7 @@ void Bullet::drawBullet(Bullet bullet[], int size)
 	}
 }
 
-void Bullet::fireBullet(Bullet bullet[], int size, Spaceship &ship)
+void Bullet::fire(Bullet bullet[], int size, Spaceship &ship)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -39,7 +39,7 @@ void Bullet::fireBullet(Bullet bullet[], int size, Spaceship &ship)
 	}
 }
 
-void Bullet::updateBullet(Bullet bullet[], int size)
+void Bullet::update(Bullet bullet[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{

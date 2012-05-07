@@ -8,9 +8,9 @@ public:
 	int ID, x, y, speed;
 	bool live;
 
-	void initBullet(Bullet bullet[], int size);
-    void drawBullet(Bullet bullet[], int size);
-	void fireBullet(Bullet bullet[], int size, Spaceship &ship);
-	void updateBullet(Bullet bullet[], int size);
+	void init(Bullet bullet[], int size);
+    void draw(Bullet bullet[], int size);
+	void fire(Bullet bullet[], int size, Spaceship &ship);
+	void update(Bullet bullet[], int size);
 };
 

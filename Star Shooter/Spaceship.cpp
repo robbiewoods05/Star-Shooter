@@ -6,7 +6,7 @@
 
 using namespace ENUMS;
 
-void Spaceship::initShip(Spaceship &ship)
+void Spaceship::init(Spaceship &ship)
 {
 	ship.ID = PLAYER;
 	ship.x = 20;
@@ -19,7 +19,7 @@ void Spaceship::initShip(Spaceship &ship)
 }
 
 
-void Spaceship::drawShip(Spaceship &ship)
+void Spaceship::draw(Spaceship &ship)
 {
 	al_draw_filled_rectangle(ship.x, ship.y - 9, ship.x + 10, ship.y - 7, al_map_rgb(255, 0, 0));
     al_draw_filled_rectangle(ship.x, ship.y + 9, ship.x + 10, ship.y + 7, al_map_rgb(255, 0, 0));
@@ -29,28 +29,28 @@ void Spaceship::drawShip(Spaceship &ship)
 }
 
 
-void Spaceship::moveShipUp(Spaceship &ship)
+void Spaceship::moveUp(Spaceship &ship)
 {
 	ship.y -= ship.speed;
     if (ship.y < 0)
 	ship.y = 0;
 }
 
-void Spaceship::moveShipDown(Spaceship &ship)
+void Spaceship::moveDown(Spaceship &ship)
 {
 	ship.y += ship.speed;
     if (ship.y > HEIGHT)
 	ship.y = 400;
 }
 
-void Spaceship::moveShipLeft(Spaceship &ship)
+void Spaceship::moveLeft(Spaceship &ship)
 {
 	ship.x -= ship.speed;
     if (ship.x < 0)
 	ship.x = 0;
 }
 
-void Spaceship::moveShipRight(Spaceship &ship)
+void Spaceship::moveRight(Spaceship &ship)
 {
 	ship.x += ship.speed;
     if (ship.x > 300)

@@ -5,7 +5,7 @@
 
 using namespace ENUMS;
 
-void Comet::initComet(Comet comets[], int size)
+void Comet::init(Comet comets[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -16,7 +16,7 @@ void Comet::initComet(Comet comets[], int size)
 		comets[i].boundY = 18;
 	}
 }
-void Comet::drawComet(Comet comets[], int size) 
+void Comet::draw(Comet comets[], int size) 
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -26,7 +26,7 @@ void Comet::drawComet(Comet comets[], int size)
 		}
 	}
 }
-void Comet::startComet(Comet comets[], int size)
+void Comet::start(Comet comets[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -42,7 +42,7 @@ void Comet::startComet(Comet comets[], int size)
 		}
 	}
 }
-void Comet::updateComet(Comet comets[], int size)
+void Comet::update(Comet comets[], int size)
 {
 	for (int i = 0; i < size; i++) 
 	{
