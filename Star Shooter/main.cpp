@@ -52,10 +52,10 @@ int main(void)
     timer = al_create_timer(1.0 / FPS);
 
 	srand(time(NULL));
-	ship.initShip(ship);
-	bullets[NUM_BULLETS].initBullet(bullets, NUM_BULLETS);
-	comets[NUM_COMETS].initComet(comets, NUM_COMETS);
-	collideBullet(bullets, NUM_BULLETS, comets, NUM_COMETS);
+	ship.init(ship);
+	bullets[NUM_BULLETS].init(bullets, NUM_BULLETS);
+	comets[NUM_COMETS].init(comets, NUM_COMETS);
+	
 
     al_register_event_source(event_queue, al_get_keyboard_event_source());
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
@@ -65,21 +65,21 @@ int main(void)
     while (!done) {
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(event_queue, &ev);
-
+		collideBullet(bullets, NUM_BULLETS, comets, NUM_COMETS);
 	if (ev.type == ALLEGRO_EVENT_TIMER) {
 	    redraw = true;
 	    if (keys[UP])
-		ship.moveShipUp(ship);
+		ship.moveUp(ship);
 	    if (keys[DOWN])
-		ship.moveShipDown(ship);
+		ship.moveDown(ship);
 	    if (keys[LEFT])
-		ship.moveShipLeft(ship);
+		ship.moveLeft(ship);
 	    if (keys[RIGHT])
-		ship.moveShipRight(ship);
+		ship.moveRight(ship);
 
-		bullets[NUM_BULLETS].updateBullet(bullets, NUM_BULLETS);
-		comets[NUM_COMETS].startComet(comets, NUM_COMETS);
-		comets[NUM_COMETS].updateComet(comets, NUM_COMETS);
+		bullets[NUM_BULLETS].update(bullets, NUM_BULLETS);
+		comets[NUM_COMETS].start(comets, NUM_COMETS);
+		comets[NUM_COMETS].update(comets, NUM_COMETS);
 
 	} else if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
 	    done = true;
@@ -107,7 +107,7 @@ int main(void)
 
 	    case ALLEGRO_KEY_SPACE:
 		keys[SPACE] = true;
-		bullets[NUM_BULLETS].fireBullet(bullets, NUM_BULLETS, ship); 
+		bullets[NUM_BULLETS].fire(bullets, NUM_BULLETS, ship); 
 		break;
 	    }
 	} else if (ev.type == ALLEGRO_EVENT_KEY_UP) {
@@ -141,9 +141,9 @@ int main(void)
 	if (redraw && al_is_event_queue_empty(event_queue)) {
 	    redraw = false;
 
-		ship.drawShip(ship);
-		bullets[NUM_BULLETS].drawBullet(bullets, NUM_BULLETS);
-		comets[NUM_COMETS].drawComet(comets, NUM_COMETS);
+		ship.draw(ship);
+		bullets[NUM_BULLETS].draw(bullets, NUM_BULLETS);
+		comets[NUM_COMETS].draw(comets, NUM_COMETS);
 
 	    al_flip_display();
 	    al_clear_to_color(al_map_rgb(0, 0, 0));
