@@ -4,11 +4,10 @@
 #include "allegro5\allegro5.h"
 
 
-using namespace ENUMS;
 
 void Spaceship::init(Spaceship &ship)
 {
-	ship.ID = PLAYER;
+	ship.ID = ENUMS::PLAYER;
 	ship.x = 20;
     ship.y = HEIGHT / 2;
     ship.lives = 3;

@@ -3,13 +3,13 @@
 #include "allegro5\allegro5.h"
 #include "allegro5\allegro_primitives.h"
 
-using namespace ENUMS;
+
 
 void Comet::init(Comet comets[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		comets[i].ID = ENEMY;
+		comets[i].ID = ENUMS::ENEMY;
 		comets[i].live = false;
 		comets[i].speed = 5; 
 		comets[i].boundX = 18; 

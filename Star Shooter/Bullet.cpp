@@ -3,13 +3,13 @@
 #include "allegro5\allegro5.h"
 #include "allegro5\allegro_primitives.h"
 
-using namespace ENUMS;
+
 
 void Bullet::init(Bullet bullet[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		bullet[i].ID = BULLET; 
+		bullet[i].ID = ENUMS::BULLET; 
 		bullet[i].speed = 10;
 		bullet[i].live = false;
 		
