@@ -47,7 +47,6 @@ void Comet::update(Comet comets[], int size)
 	for (int i = 0; i < size; i++) 
 	{
 		comets[i].x -= comets[i].speed;
-		if(comets[i].x < 0)
-			comets[i].live = false;
+		
 	}
 }
